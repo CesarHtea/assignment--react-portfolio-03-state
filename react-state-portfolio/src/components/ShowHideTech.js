@@ -32,10 +32,7 @@ class ShowHideTech extends Component {
     });
   }
 
-
-
   render() {
-    console.log(this.state.techlistStatus)
     return (
       <section>
         <h4>Technologies</h4>
