@@ -13,16 +13,33 @@ class ShowHideTech extends Component {
     super();
 
     this.state = {
-      techlistStatus: 'techlist--hidden'
+      techlistStatus: 'techlist--hidden',
+      buttonText: '+ Show Tech'
     };
   }
+
+  stateToShow = () => {
+    this.setState({
+      techlistStatus: '',
+      buttonText: '- Hide Tech'
+    });
+  }
+
+  stateToHide = () => {
+    this.setState({
+      techlistStatus: 'techlist--hidden',
+      buttonText: '+ Show Tech' 
+    });
+  }
+
+
 
   render() {
     console.log(this.state.techlistStatus)
     return (
       <section>
         <h4>Technologies</h4>
-        <button className="toggle-techlist" onClick={ () => { this.state.techlistStatus === '' ?  this.setState( {techlistStatus: 'techlist--hidden' } ) : this.setState( {techlistStatus: '' } ) } }>+ Show Tech</button>
+        <button className="toggle-techlist" onClick={ () => { this.state.techlistStatus === '' ?  this.stateToHide() : this.stateToShow() } }>{this.state.buttonText}</button>
 
         <div className={`techlist ${this.state.techlistStatus}`}>
           <span className="techlist__icon devicons devicons-github_badge"/>
