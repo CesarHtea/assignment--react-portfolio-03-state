@@ -9,16 +9,22 @@ import React, { Component } from 'react';
 
 class ShowHideTech extends Component {
 
+  constructor() {
+    super();
+
+    this.state = {
+      techlistStatus: 'techlist--hidden'
+    };
+  }
+
   render() {
-
-    let techlistStatus = `techlist--hidden`
-
+    console.log(this.state.techlistStatus)
     return (
       <section>
         <h4>Technologies</h4>
-        <button className="toggle-techlist">+ Show Tech</button>
+        <button className="toggle-techlist" onClick={ () => { this.state.techlistStatus === '' ?  this.setState( {techlistStatus: 'techlist--hidden' } ) : this.setState( {techlistStatus: '' } ) } }>+ Show Tech</button>
 
-        <div className={`techlist ${techlistStatus}`}>
+        <div className={`techlist ${this.state.techlistStatus}`}>
           <span className="techlist__icon devicons devicons-github_badge"/>
           <span className="techlist__icon devicons devicons-git"/>
           <span className="techlist__icon devicons devicons-html5"/>
@@ -33,3 +39,5 @@ class ShowHideTech extends Component {
     );
   }
 }
+
+export default ShowHideTech ;

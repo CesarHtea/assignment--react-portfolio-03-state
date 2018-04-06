@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { projectData } from '../data/datasource'
+// import { projectData } from '../data/datasource'
 
 /*  Advice:
    (1) Create the component's JSX by using .map() on `projectData`
@@ -55,3 +55,5 @@ class FilterProjects extends Component {
     );
   }
 }
+
+export default FilterProjects ;
